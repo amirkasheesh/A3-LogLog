@@ -10,7 +10,7 @@ class RandomStreamGen {
     const std::string CHARACTERS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-";
 
  public:
-    RandomStreamGen() : gen(123456), dist_len(1, 30), dist_index(0, 62) {}
+    explicit RandomStreamGen(int seed) : gen(seed), dist_len(1, 30), dist_index(0, 62) {}
 
     std::string next() {
         int len = dist_len(gen);
