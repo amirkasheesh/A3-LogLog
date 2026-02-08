@@ -23,13 +23,12 @@ class HyperLogLog {
             return 0.697;
         } else if (b == 6) {
             return 0.709;
-        } else if (b >= 7) {
-            double degree = 1;
-            for (size_t i = 0; i < b; ++i) {
-                degree *= 2;
-            }
-            return 0.7213 / (1 + (1.079 / degree));
         }
+        double degree = 1;
+        for (size_t i = 0; i < b; ++i) {
+            degree *= 2;
+        }
+        return 0.7213 / (1 + (1.079 / degree));
     }
 
  public:
